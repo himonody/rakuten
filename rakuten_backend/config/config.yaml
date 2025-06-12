@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  mode: debug
+
+# http server settings
+http:
+  port: 8080                # listen port
+  timeout: 0                # request timeout, unit(second), if 0 means not set, if greater than 0 means set timeout, if enableHTTPProfile is true, it needs to set 0 or greater than 60s
+
+
+mysql:
+  host: localhost
+  port: 3306
+  username: root
+  password: mysqlroot
+  dbname: rakuten
+  charset: utf8mb4
+  parseTime: true
+  loc: Local
+  maxOpenConns: 100    # 最大打开连接数
+  maxIdleConns: 20     # 最大空闲连接数
+  connMaxLifetime: 3600 # 连接最大生命周期（秒）
+
+jwt:
+  secret: your-secret-key
+  expire: 24 # hours
+  issuer: gin-demo
+
+  
+log:
+  level: "debug"  # debug, info, warn, error
+  filename: "logs/app.log"  # 日志文件路径
+  maxSize: 100    # 单个日志文件最大尺寸，单位MB
+  maxBackups: 10  # 最大保留多少个备份
+  maxAge: 30      # 日志文件保留天数
+  compress: true  # 是否压缩
+  console: true   # 是否输出到控制台
